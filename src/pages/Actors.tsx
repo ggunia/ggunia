@@ -28,7 +28,7 @@ const Actors: FunctionComponent<{ search: string }> = ({ search }) => {
         <CardItem
           key={actor.id}
           title={actor.name}
-          description={actor.known_for_department}
+          description={actor.known_for_department || ''}
           onClick={redirectToDetails(actor.id)}
         />
       ))}
