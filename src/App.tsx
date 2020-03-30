@@ -4,10 +4,10 @@ import styled from 'styled-components'
 
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
-import Movies from './components/Movies'
-import Actors from './components/Actors'
-import MovieDetails from './components/MovieDetails'
-import ActorDetails from './components/ActorDetails'
+import Movies from './pages/Movies'
+import Actors from './pages/Actors'
+import MovieDetails from './pages/MovieDetails'
+import ActorDetails from './pages/ActorDetails'
 
 const StyledAppContainer = styled.div`
   min-height: 100vh;

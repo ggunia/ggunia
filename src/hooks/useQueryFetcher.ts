@@ -13,7 +13,14 @@ interface HookReturnType<ResponseType> {
   data: ResponseType,
 }
 
-function useQueryFetcher<ResponseType>({ apiEndpoint, searchEndpoint, initialValue, parseResponse, search = '' }: TypeHookProps<ResponseType>): HookReturnType<ResponseType> {
+// Delcare ResponseType Generic to define data shape dynamically for each api call
+function useQueryFetcher<ResponseType>({
+  apiEndpoint,
+  searchEndpoint,
+  initialValue,
+  parseResponse,
+  search = ''
+}: TypeHookProps<ResponseType>): HookReturnType<ResponseType> {
   const [loading, updateLoading] = React.useState<boolean>(false)
   const [data, updateData] = React.useState<ResponseType>(initialValue)
 

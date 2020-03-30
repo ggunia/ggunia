@@ -1,7 +1,7 @@
 import React, { FunctionComponent, SyntheticEvent } from 'react'
 import styled from 'styled-components'
 
-import NavigationItem from './NavigationItem'
+import NavigationItem from '../shared/NavigationItem'
 
 type TypeSearchBarProps = {
   searchValue: string,
@@ -34,11 +34,7 @@ const SearchBar: FunctionComponent<TypeSearchBarProps> = ({ searchValue, updateS
     <NavigationItem exact path="/">Movies</NavigationItem>
     <NavigationItem path="/actors">Actors</NavigationItem>
 
-    <StyledInput
-      value={searchValue}
-      placeholder="Search..."
-      onChange={updateSearch}
-    />
+    <StyledInput value={searchValue} placeholder="Search..." onChange={updateSearch} />
   </StyledSearchBar>
 )
 

@@ -2,8 +2,6 @@ import React, { FunctionComponent } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-type HeaderProps = {}
-
 const StyledHeader = styled.div`
   background-color: #2980B9;
   color: white;
@@ -17,7 +15,7 @@ const StyledLink = styled(Link)`
   font-weight: normal;
 `
 
-const Header: FunctionComponent<HeaderProps> = () => {
+const Header: FunctionComponent<{}> = () => {
   return (
     <StyledHeader>
       <StyledLink to="/">Movie Searcher</StyledLink>

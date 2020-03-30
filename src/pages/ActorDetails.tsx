@@ -1,14 +1,9 @@
 import React, { FunctionComponent } from 'react'
 import { useParams } from 'react-router-dom'
-import styled from 'styled-components'
 
-import { ActorDetailType } from '../typescriptTypes'
-import useQueryFetcher from '../useQueryFetcher'
-
-const StyledList = styled.ul`
-  width: 90%;
-  margin: auto;
-`
+import useQueryFetcher from '../hooks/useQueryFetcher'
+import { ActorDetailType } from '../types/ActorTypes'
+import { StyledList } from '../shared/StyledComponents'
 
 const initialValue: ActorDetailType = {
   id: 0,

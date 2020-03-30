@@ -1,21 +1,19 @@
 import React, { FunctionComponent } from 'react'
-import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
 
-import useQueryFetcher from '../useQueryFetcher'
-import { ActorType } from '../typescriptTypes'
-import CardItem from './CardItem'
-
-const StyledCardsContainer = styled.div`
-  display: grid;
-  grid-gap: 50px;
-  grid-template-columns: repeat(auto-fit, 250px);
-  justify-content: center;
-`
+import useQueryFetcher from '../hooks/useQueryFetcher'
+import { ActorType } from '../types/ActorTypes'
+import CardItem from '../shared/CardItem'
+import { StyledCardsContainer } from '../shared/StyledComponents'
 
 const Actors: FunctionComponent<{ search: string }> = ({ search }) => {
   const history = useHistory()
-  const { data, loading } = useQueryFetcher<ActorType[]>({ search, searchEndpoint: 'search/person', initialValue: [], apiEndpoint: 'person/popular' })
+  const { data, loading } = useQueryFetcher<ActorType[]>({
+    search,
+    searchEndpoint: 'search/person',
+    initialValue: [],
+    apiEndpoint: 'person/popular',
+  })
 
   const redirectToDetails = React.useCallback(
     (actorId) => () => history.push(`/actor/${actorId}/details`),

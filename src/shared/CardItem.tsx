@@ -46,4 +46,4 @@ const CardItem: FunctionComponent<CardItemProps> = ({ title, description, onClic
   )
 }
 
-export default CardItem
+export default React.memo(CardItem)

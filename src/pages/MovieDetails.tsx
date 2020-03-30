@@ -1,18 +1,15 @@
 import React, { FunctionComponent } from 'react'
 import { useParams } from 'react-router-dom'
-import styled from 'styled-components'
 
-import { MovieDetailType } from '../typescriptTypes'
-import useQueryFetcher from '../useQueryFetcher'
-
-const StyledList = styled.ul`
-  width: 90%;
-  margin: auto;
-`
+import useQueryFetcher from '../hooks/useQueryFetcher'
+import { MovieDetailType } from '../types/MovieTypes'
+import { StyledList } from '../shared/StyledComponents'
 
 const initialValue: MovieDetailType = {
   id: 0,
   title: '',
+  imdb_id: '',
+  revenue: 0,
   release_date: '',
   tagline: '',
   vote_average: 0,

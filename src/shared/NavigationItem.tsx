@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 type NavigationItemProps = {
   exact?: boolean,
   path: string,
+  children: string,
 }
 
 const StyledNavigationItem = styled(NavLink)`
@@ -35,4 +36,4 @@ const NavigationItem: FunctionComponent<NavigationItemProps> = ({ exact, path, c
   </StyledNavigationItem>
 )
 
-export default NavigationItem
+export default React.memo(NavigationItem)
