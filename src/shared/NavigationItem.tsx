@@ -28,6 +28,10 @@ const StyledNavigationItem = styled(NavLink)`
   &.active:before {
     background-color: #2980B9;
   }
+
+  @media (max-width: ${process.env.REACT_APP_TABLET_BREAKPOINT}) {
+    font-size: 16px;
+  }
 `
 
 const NavigationItem: FunctionComponent<NavigationItemProps> = ({ exact, path, children }) => (

@@ -13,6 +13,10 @@ const StyledLink = styled(Link)`
   color: white;
   font-size: 36px;
   font-weight: normal;
+
+  @media (max-width: ${process.env.REACT_APP_TABLET_BREAKPOINT}) {
+    font-size: 16px;
+  }
 `
 
 const Header: FunctionComponent<{}> = () => {

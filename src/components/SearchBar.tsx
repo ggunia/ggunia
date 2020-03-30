@@ -14,6 +14,10 @@ const StyledSearchBar = styled.div`
   grid-template-columns: 150px 150px auto;
   grid-column-gap: 20px;
   align-items: center;
+
+  @media (max-width: ${process.env.REACT_APP_TABLET_BREAKPOINT}) {
+    grid-template-columns: 60px 60px auto;
+  }
 `
 
 const StyledInput = styled.input`
@@ -27,6 +31,10 @@ const StyledInput = styled.input`
   outline: none;
   width: 300px;
   margin-left: 50px;
+
+  @media (max-width: ${process.env.REACT_APP_TABLET_BREAKPOINT}) {
+    width: 200px;
+  }
 `
 
 const SearchBar: FunctionComponent<TypeSearchBarProps> = ({ searchValue, updateSearch }) => (

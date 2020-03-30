@@ -13,6 +13,10 @@ const StyledAppContainer = styled.div`
   min-height: 100vh;
   display: grid;
   grid-template-rows: 80px 80px auto;
+
+  @media (max-width: ${process.env.REACT_APP_TABLET_BREAKPOINT}) {
+    grid-template-rows: 60px 60px auto;
+  }
 `
 
 const StyledContentContainer = styled.div`
