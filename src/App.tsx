@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Switch, Route, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
 import Header from './components/Header'
@@ -24,6 +24,7 @@ const StyledContentContainer = styled.div`
 `
 
 const App = () => {
+  const location = useLocation()
   const [search, updateSearch] = React.useState<string>('')
 
   const handleSearch = React.useCallback(
@@ -31,9 +32,10 @@ const App = () => {
     []
   )
 
+  React.useEffect(() => { updateSearch('') }, [location])
+
   return (
-    <BrowserRouter>
-      <StyledAppContainer>
+    <StyledAppContainer>
       <Header />
 
       <SearchBar searchValue={search} updateSearch={handleSearch} />
@@ -58,7 +60,6 @@ const App = () => {
         </Switch>
       </StyledContentContainer>
     </StyledAppContainer>
-    </BrowserRouter>
   )
 }
 

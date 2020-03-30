@@ -1,4 +1,5 @@
 import React, { FunctionComponent, SyntheticEvent } from 'react'
+import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
 import NavigationItem from '../shared/NavigationItem'
@@ -37,13 +38,23 @@ const StyledInput = styled.input`
   }
 `
 
-const SearchBar: FunctionComponent<TypeSearchBarProps> = ({ searchValue, updateSearch }) => (
-  <StyledSearchBar>
-    <NavigationItem exact path="/">Movies</NavigationItem>
-    <NavigationItem path="/actors">Actors</NavigationItem>
+const SearchBar: FunctionComponent<TypeSearchBarProps> = ({ searchValue, updateSearch }) => {
+  const location = useLocation()
 
-    <StyledInput value={searchValue} placeholder="Search..." onChange={updateSearch} />
-  </StyledSearchBar>
-)
+  return (
+    <StyledSearchBar>
+      <NavigationItem exact path="/">Movies</NavigationItem>
+      <NavigationItem path="/actors">Actors</NavigationItem>
+
+      {['/', '/actors'].indexOf(location.pathname) !== -1 && (
+        <StyledInput
+          value={searchValue}
+          placeholder="Search..."
+          onChange={updateSearch}
+        />
+      )}
+    </StyledSearchBar>
+  )
+}
 
 export default SearchBar
